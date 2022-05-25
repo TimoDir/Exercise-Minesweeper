@@ -1,6 +1,11 @@
 // Finish the program
 function placeMines(rows, columns, mines) {
-  return "x_x_\n__x_";
+  var numLineBreak = rows - 1;
+  var numMines = mines;
+  var lenghtString = (rows * columns) + numLineBreak;
+  // Creation of the base of the grid
+  var grid = new Array(lenghtString).fill('_');
+  return grid.join('');
 }
 
 // export the function to the test unit
@@ -14,5 +19,5 @@ const log = msg => {
 };
 // Try uncommenting this
 // log(placeMines(2, 4, 3))
-var output = 'x_x_\n__x_'
-console.log(output.split('').filter(letter => letter == 'x').length)
+
+// console.log(placeMines(2, 4, 3))
