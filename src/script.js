@@ -1,25 +1,24 @@
 // Finish the program
 function placeMines(rows, columns, mines) {
-  var numLineBreak = rows - 1;
-  var lenghtString = (rows * columns) + numLineBreak;
+  const numLineBreak = rows - 1;
+  const lenghtString = (rows * columns) + numLineBreak;
   // Creation of the base of the grid
-  var grid = new Array(lenghtString).fill('_');
+  const grid = new Array(lenghtString).fill('_');
 
   // Defined a random function to place mine in the grid
   const random = () => Math.floor(Math.random()*lenghtString);
 
   // Placing the LineBreaker in our grid
-  for (let i = 0; i < numLineBreak; i++) {
-    var line = i+1;
-    // We want to catch every end of line by multiplying the length of colum + the letter to add the breakline caractere
-    var endLine = (columns*line) + i;
+  for (let line = 1; line <= numLineBreak; line++) {
+    // We want to catch every end of each line by multiplying the length of colum with current line + the letter to add the breakline caractere
+    const endLine = (columns*line) + line;
     grid[endLine] = '\n';
   };
 
   // Placing the mine randomly
   while(0 < mines){
     // Storing an random number inside the placeMine
-    var placeMine = random();
+    const placeMine = random();
     // Check if it will not have a conflict with a break line or an already existing mine
     if(grid[placeMine] !== '\n' && grid[placeMine] !== 'x'){
       mines--;
@@ -27,6 +26,7 @@ function placeMines(rows, columns, mines) {
     };
   };
 
+  // returning the string grid by joining the array with the mine place! 
   return grid.join('');
 };
 

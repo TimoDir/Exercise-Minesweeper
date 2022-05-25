@@ -1,5 +1,5 @@
 var assert = require('assert');
-var placeMines = require('../src/script')
+var placeMines = require('./script_test')
 
 describe('placesMines', function(){
     var numRow = 2;
