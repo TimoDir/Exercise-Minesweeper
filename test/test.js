@@ -1,0 +1,1 @@
+var assert = resquire('assert')
