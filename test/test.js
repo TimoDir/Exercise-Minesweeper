@@ -19,6 +19,11 @@ describe('placesMines', function(){
         const controle = output.length;
         assert.strictEqual(controle, expectedResult, "The function didn't retrun the good string lenght.")
     });
+    it('Should return a string with each row to have a specifique length.', function(){
+        const expectedResult = true;
+        const controle = output.split('\n').every(array => array.length == numCol);
+        assert.strictEqual(controle, expectedResult, "The function didn't retrun the good string lenght.")
+    });
     it('Should return a defined number of mine.', function(){
         const expectedResult = numMine;
         const controle = output.split('').filter(letter => letter == 'x').length;

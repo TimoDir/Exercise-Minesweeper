@@ -1,3 +1,4 @@
+// Finish the program
 function placeMines(rows, columns, mines) {
     const numLineBreak = rows - 1;
     const lenghtString = (rows * columns) + numLineBreak;
@@ -8,9 +9,10 @@ function placeMines(rows, columns, mines) {
     const random = () => Math.floor(Math.random()*lenghtString);
   
     // Placing the LineBreaker in our grid
-    for (let line = 1; line <= numLineBreak; line++) {
-      // We want to catch every end of each line by multiplying the length of colum with current line + the letter to add the breakline caractere
-      const endLine = (columns*line) + line;
+    for (let i = 0; i < numLineBreak; i++) {
+      const line = i+1;
+      // We want to catch every end of line by multiplying the length of colum + the letter to add the breakline caractere
+      const endLine = (columns*line) + i;
       grid[endLine] = '\n';
     };
   
@@ -25,7 +27,7 @@ function placeMines(rows, columns, mines) {
       };
     };
   
-    // returning the string grid by joining the array with the mine place! 
+    // returning the string grid by joining the array with the mine place!
     return grid.join('');
   };
   
