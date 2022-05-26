@@ -11,16 +11,16 @@ function placeMines(rows, columns, mines) {
   // Placing the LineBreaker in our grid
   for (let i = 0; i < numLineBreak; i++) {
     const line = i+1;
-    // We want to catch every end of line by multiplying the length of colum + the letter to add the breakline caractere
+    // We want to catch every end of line by multiplying the length of column + the letter to add the break line character
     const endLine = (columns*line) + i;
     grid[endLine] = '\n';
   };
 
   // Placing the mine randomly
   while(0 < mines){
-    // Storing an random number inside the placeMine
+    // Storing an random number inside the placeMine loop
     const placeMine = random();
-    // Check if it will not have a conflict with a break line or an already existing mine
+    // Check if it will not have a conflict with a break line or any already existing mine
     if(grid[placeMine] !== '\n' && grid[placeMine] !== 'x'){
       mines--;
       grid[placeMine] = 'x';
@@ -39,6 +39,3 @@ const log = msg => {
 };
 // Try uncommenting this
  log(placeMines(2, 4, 3))
-
- //console.log(placeMines(2, 4, 3))
- //placeMines(3, 4, 3)

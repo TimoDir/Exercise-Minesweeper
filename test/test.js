@@ -9,20 +9,20 @@ describe('placesMines', function(){
     it('Should return a string.', function(){
         assert.strictEqual(typeof(output), 'string', "The function didn't return a string.")
     });
-    it('Should return a string with a defined number of row with the help of the Break Line caractere.', function(){
+    it('Should return a string with a defined number of row with the help of the Break Line character.', function(){
         const expectedResult = numRow - 1;
         const controle = output.split('').filter(letter => letter == '\n').length;
-        assert.strictEqual(controle, expectedResult, "The function didn't retrun the good number of row.")
+        assert.strictEqual(controle, expectedResult, "The function did not return the good number of row.")
     });
     it('Should return a string with a length of (numRow * numCol) + (numRow - 1).', function(){
         const expectedResult = (numRow*numCol) + numRow - 1;
         const controle = output.length;
-        assert.strictEqual(controle, expectedResult, "The function didn't retrun the good string lenght.")
+        assert.strictEqual(controle, expectedResult, "The function did not return the good string length.")
     });
-    it('Should return a grid string with each row having a specifique length.', function(){
+    it('Should return a grid string with each row having a specific length.', function(){
         const expectedResult = true;
         const controle = output.split('\n').every(array => array.length == numCol);
-        assert.strictEqual(controle, expectedResult, "The function didn't retrun the good string lenght.")
+        assert.strictEqual(controle, expectedResult, "The function did not return the good string length for each row.")
     });
     it('Should return a defined number of mine.', function(){
         const expectedResult = numMine;
