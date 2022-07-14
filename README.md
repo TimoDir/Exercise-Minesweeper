@@ -1,4 +1,4 @@
-# Internship task B: Minesweeper
+# Exercise: Minesweeper
 
 For our new clone of Minesweeper, we will need to generate a board with a certain number of mines randomly placed in it. The board should have a certain number of rows, columns and mines.
 For that we use a fonction who wil have as argument:
